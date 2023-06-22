@@ -42,34 +42,53 @@ console.log(wordCounter("bird bird bird"));
 
 /// test#4
 function wordCounter(text){
+  if(text.trim().length === 0){
+    return 0;
+  }
   let sumWords = 0;
   for(let i = 0; i < text.length; i++){
-    let number = text.charCodeAt(i);
-    if()
+    let wordsArray = [ ];
+    if(i === Number(i)){
+      wordsArray.pop();
+    }
+    return wordsArray;
   }
 };
-wordCounter("there are 17 cats");
+console.log(wordCounter("there are 17 cats"));
 
 
 //test #5  " blank "
 //if only split, foreach, return sum => 2
 //add length test first, if true will return and stop executing
 //add most important first, return to send up value and exit function
-//continues to return 2, i have no idea melty face 
-let text = " ";
+//continues to return 2, length seems to count spaces
 function wordCounter(text){
-  if(text.length === 0){
+  if(text.trim().length === 0){
     return 0;
   }
+    let sumWords = 0;
+    const wordsArray = text.split(" ");
+    wordsArray.forEach(word => {
+      sumWords++;
+    });
+    return sumWords;
+}
 
-  let sumWords = 0;
-  const wordsArray = text.split(" ");
-  wordsArray.forEach(word => {
-    sumWords++;
-  });
-  return sumWords;
-};
-
-console.log(wordCounter(text));
+console.log(wordCounter(" "));
 
 
+//test #6
+//use trim to remove spaces
+//why does it work in devtools but not output
+function wordCounter(text){
+  if (text.trim().length === 0){
+    return 0;
+  }
+    let sumWords = 0;
+    const wordsArray = text.split(" ");
+    wordsArray.forEach(x => { 
+      sumWords++;
+    });
+    return sumWords; //remember to return
+  }
+wordCounter("       ");

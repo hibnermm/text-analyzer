@@ -2,28 +2,32 @@ Text Analyzer Project
 
 Describe: wordCounter()
 
-<!-- first test -->
-Test: "It should return 1 if a passage has just one word."
-Code: 
-const text = "hello";
-wordCounter(text);
+<!--test#1 -->
+Test: should return 1 if one word
+Code: wordCounter("hi");
 Expected Output: 1
 
-<!-- second test -->
-Test: "It should return 2 if a passage has two words."
-Code:
-const text = "hello there";
-wordCounter(text);
+<!-- test#2 -->
+Test: return 2 if has two words
+Code: wordCounter("hey buddy);
 Expected Output: 2
 
-<!-- third test --> 
-Test:  "It should return 3 for passage with three words."
-Code: const text = "word word word";
-wordCounter(text);
+<!--test#3 --> 
+Test:  return 3 if has three words
+Code: wordCounter("bird bird bird");
 Expected Output: 3
 
-<!-- fourth test -->
-Test: "It should return 3 for passage with three words and one number."
-Code: const text = "there are 17 cats";
+<!-- test#4 -->
+Test: return 3 if has three words and one number
+Code: wordCounter("there are 17 cats");
 Expected Output = 3
 
+<!-- test #5 -->
+Test: It should return 0 for empty string
+Code: wordCounter(" ");
+Expected output: 0; 
+
+<!-- test #6 -->
+Test: return 0 for only empty spaces in string
+Code: wordCounter("         ");
+Expected output:  0;
