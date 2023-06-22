@@ -1,8 +1,11 @@
 // test#1
 function wordCounter(word) {
-  return 1;
+  const wordsArray = word.split(" ").length;
+  return wordsArray;
 };
 console.log(wordCounter("hi"));
+//console.log(wordCounter("hi yo holler ")); 
+//returns 4 
 
 /// test#2a
 //split creates array, then takes length
@@ -46,15 +49,17 @@ function wordCounter(text){
     return 0;
   }
   let sumWords = 0;
-  for(let i = 0; i < text.length; i++){
-    let wordsArray = [ ];
-    if(i === Number(i)){
-      wordsArray.pop();
+  let wordsArray = text.split(" "); //new array
+  wordsArray.forEach(x => {
+    if(!Number(x)){  //if x is not number 
+      sumWords++;
     }
-    return wordsArray;
-  }
+  });
+  return sumWords;
 };
 console.log(wordCounter("there are 17 cats"));
+//console.log(wordCounter("there are 17 cats  "));  
+//returns 5...i d k
 
 
 //test #5  " blank "
@@ -92,3 +97,98 @@ function wordCounter(text){
     return sumWords; //remember to return
   }
 wordCounter("       ");
+
+//test #7
+function uniqueCounterExcerpt(word, excerpt){
+  if(word != excerpt){
+    return 0;
+  }
+}
+console.log(uniqueCounterExcerpt("yo", " "));
+
+//test 8
+//why start with === instead of !=?  
+function uniqueCounterExcerpt(word, excerpt){
+  if(word === excerpt){
+    return 1;
+  }else{
+    return 0;
+  }
+}
+console.log(uniqueCounterExcerpt("yo", "yo"));
+
+
+//test 9
+function uniqueCounterExcerpt(word, excerpt){
+  if(word === excerpt){
+    return 1;
+  }else{
+    return 0;
+  }
+}
+console.log(uniqueCounterExcerpt("yo", "holler"));
+
+//test 10
+function uniqueCounterExcerpt(word, excerpt){
+  excerptArray = excerpt.split(" ");
+  let sumWords = 0;
+  excerptArray.forEach(i => {
+    if(word === i){
+      sumWords++;
+    }
+    });
+  return sumWords;
+}
+console.log(uniqueCounterExcerpt("yo", "yo holler what yup yo yo"));
+
+
+//test 11
+function uniqueCounterExcerpt(word, excerpt){
+  const excerptArray = excerpt.split(" ");
+  let sumWords = 0;
+  excerptArray.forEach(i => {
+    //put method within conditional, more concise
+    if(word.toLowerCase() === i.toLowerCase()){
+      sumWords++;
+    }
+  });
+  return sumWords;
+}
+console.log(uniqueCounterExcerpt("yo", "yo holler what yup yo Yo"));
+
+//test 12
+//includes method will help you find string within
+//returns true or false
+
+const word = "yo"
+const excerpt = "yo? holler. what, yup yo! Yo"
+console.log(excerpt.includes(word));
+
+function uniqueCounterExcerpt(word, excerpt){
+  const excerptArray = excerpt.split(" ");
+  let sumWords = 0;
+  excerptArray.forEach(i => {
+    let iLC = i.toLowerCase();
+    let wordLC = word.toLowerCase();
+    if(iLC.includes(wordLC)){
+      sumWords++;
+    }
+  });
+  return sumWords;
+}
+console.log(uniqueCounterExcerpt("yo", "yo? holler. what, yup yo! Yo"));
+
+//write more concisely:  (element.toLowerCase().includes(word.toLowerCase())) 
+//.length doesn't work since it counts punctuation against, not sure how to ignore puncutation
+
+
+//test 13
+function wordOmit(words, excerpt){
+
+}
+ 
+//slow down -> don't start here...
+words = ["zoinks", "mUppetteer", "biffaroni", "loopdaloP"]
+excerpt = "Lorem ipsum zoinks dolor sit amet consectetur biffaroni adipisicing elit, Zoinks. Praesentium aliquid, muppetteer, pariatur modi veritatis maiores asperiores biffaroni omnis odit molestiae aut doloribus loopdalop."
+
+wordOmit(words, excerpt);
