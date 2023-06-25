@@ -107,3 +107,15 @@ const excerpt = "yo holler what yup yo Yo"
 test: returns # that matches word freq regardless of punctuation given excerpt freq
 const word = "yo"
 const excerpt = "yo? holler. what, yup yo! Yo"
+
+<!-- test 13 -->
+1. function identifies word = value in excerpt
+...series of tests
+split into array
+2. splices to remove, join into string
+
+<!-- test 14 -->
+1. function identifies word is present in array 
+
+
+<!-- example 1 -->
